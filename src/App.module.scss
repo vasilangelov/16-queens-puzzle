@@ -1,0 +1,116 @@
+$background: #1a181b;
+$background-secondary: #34283e;
+
+$text-color: #fff;
+
+$chessboard-black: #894e32;
+$chessboard-white: #d7bc94;
+
+$primary: #692d53;
+$primary-focused: darken($primary, 5%);
+$primary-contrast: #fff;
+
+$message-background: #4e4e94;
+
+.App {
+  background-color: $background;
+
+  display: flex;
+  gap: 2rem;
+
+  height: 100vh;
+
+  font-family: "Helvetica", sans-serif;
+
+  &__main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 9 9 75%;
+  }
+
+  &__chessboard {
+    display: grid;
+
+    height: 90%;
+    aspect-ratio: 1 / 1;
+  }
+
+  &__tile {
+    aspect-ratio: 1 / 1;
+
+    user-select: none;
+
+    &--white {
+      background-color: $chessboard-white;
+    }
+
+    &--black {
+      background-color: $chessboard-black;
+    }
+
+    &--clickable {
+      cursor: pointer;
+    }
+  }
+
+  &__sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+
+    padding: 3.2rem 1.6rem 1.6rem 1.6rem;
+
+    flex: 3 3 25%;
+
+    color: $text-color;
+    background-color: $background-secondary;
+  }
+
+  &__title {
+    font-size: 4rem;
+    line-height: 5.6rem;
+    text-align: center;
+  }
+
+  &__settings-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+
+  &__form-control {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    font-size: 1.8rem;
+    line-height: 2.2rem;
+
+    flex-grow: 1;
+  }
+
+  &__input {
+    width: 10rem;
+
+    font-size: 2.2rem;
+    line-height: 2.6rem;
+  }
+
+  &__button {
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 0.8rem;
+
+    color: $primary-contrast;
+    background-color: $primary;
+    font-size: 1.8rem;
+    line-height: 2.2rem;
+
+    cursor: pointer;
+
+    &:hover {
+      background-color: $primary-focused;
+    }
+  }
+}
